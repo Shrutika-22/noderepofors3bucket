@@ -5,17 +5,13 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "Installing dependencies..."
-      - node -v
-      - npm -v
       - npm ci --legacy-peer-deps
 
   build:
     commands:
-      - echo "Building application..."
       - npm run build
 
 artifacts:
-  base-directory: build
+  base-directory: dist
   files:
     - '**/*'
