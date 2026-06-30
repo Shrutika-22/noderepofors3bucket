@@ -5,19 +5,17 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "Checking node and npm versions..."
+      - echo "Installing dependencies..."
       - node -v
       - npm -v
-      - echo "Installing dependencies..."
       - npm ci --legacy-peer-deps
 
   build:
     commands:
-      - echo "Building the React application..."
+      - echo "Building application..."
       - npm run build
 
 artifacts:
+  base-directory: build
   files:
     - '**/*'
-  base-directory: build
-  discard-paths: no
